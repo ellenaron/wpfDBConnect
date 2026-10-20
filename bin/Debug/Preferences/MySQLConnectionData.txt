@@ -1,0 +1,5 @@
+Host:localhost
+user:root
+Database:test
+Password:
+Port:3307

@@ -1,0 +1,24 @@
+System.IO.DirectoryNotFoundException: Nem található a következő elérési út egy része.: „C:\Users\ellaro093\source\repos\WpfApp1\bin\Debug\Preferences\MySQLConnectionData.txt”.
+   a következő helyen: System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   a következő helyen: System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   a következő helyen: System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   a következő helyen: System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   a következő helyen: System.IO.StreamReader..ctor(String path)
+   a következő helyen: WpfApp1.MainWindow.Button_Click(Object sender, RoutedEventArgs e) hely: C:\Users\ellaro093\source\repos\WpfApp1\MainWindow.xaml.cs, sor: 41
+MySql.Data.MySqlClient.MySqlException (0x80004005): Authentication to host 'localhost' for user 'root' using method 'mysql_native_password' failed with message: Unknown database 'my_database' ---> MySql.Data.MySqlClient.MySqlException (0x80004005): Unknown database 'my_database'
+   a következő helyen: MySql.Data.MySqlClient.MySqlStream.CheckForServerError()
+   a következő helyen: MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   a következő helyen: MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(MySqlException ex)
+   a következő helyen: MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   a következő helyen: MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   a következő helyen: MySql.Data.MySqlClient.NativeDriver.Authenticate(String authMethod, Boolean reset)
+   a következő helyen: MySql.Data.MySqlClient.NativeDriver.Open(CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.Driver.Open(CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings, CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection(CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.MySqlPool.GetPooledConnection(CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.MySqlPool.TryToGetDriver(CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.MySqlPool.GetConnection(CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.MySqlConnection.Open(CancellationToken cancellationToken)
+   a következő helyen: MySql.Data.MySqlClient.MySqlConnection.Open()
+   a következő helyen: WpfApp1.MainWindow.Button_Click(Object sender, RoutedEventArgs e) hely: C:\Users\ellaro093\source\repos\WpfApp1\MainWindow.xaml.cs, sor: 78

@@ -1,0 +1,99 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Content="Host:"
+               FontSize="20" />
+        <TextBox VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 Grid.Column="1"
+                 FontSize="20"
+                 Margin="12"
+                 Text="{Binding Host}" />
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Content="User:"
+               FontSize="20"
+               Grid.Row="1" />
+        <TextBox VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 Grid.Column="1"
+                 FontSize="20"
+                 Margin="12"
+                 Grid.Row="1"
+                 Text="{Binding User}" />
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Content="Password:"
+               FontSize="20"
+               Grid.Row="2" />
+        <TextBox VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 Grid.Column="1"
+                 FontSize="20"
+                 Margin="12"
+                 Grid.Row="2"
+                 Text="{Binding Password}" />
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Content="Database:"
+               FontSize="20"
+               Grid.Row="3" />
+        <TextBox VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 Grid.Column="1"
+                 FontSize="20"
+                 Margin="12"
+                 Grid.Row="3"
+                 Text="{Binding Database}" />
+        <Label VerticalAlignment="Center"
+               HorizontalAlignment="Center"
+               Content="Port:"
+               FontSize="20"
+               Grid.Row="4" />
+        <TextBox VerticalAlignment="Stretch"
+                 HorizontalAlignment="Stretch"
+                 Grid.Column="1"
+                 FontSize="20"
+                 Margin="12"
+                 Grid.Row="4"
+                 Text="{Binding Port}" />
+        <Grid Grid.Row="5"
+              Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Content="Kapcsolat"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Padding="20 10"
+                    FontSize="20" 
+                    Click="Button_Click"/>
+            <Label VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   Content="{Binding Message}"/>
+        </Grid>
+    </Grid>
+</Window>
