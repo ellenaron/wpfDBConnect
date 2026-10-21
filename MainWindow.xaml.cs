@@ -14,7 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 using WpfApp1.viewModel;
+using Path = System.IO.Path;
 
 namespace WpfApp1
 {
@@ -30,8 +32,10 @@ namespace WpfApp1
             DataContext = new ViewModel();
 
             var vm = (ViewModel)DataContext;
-
-            StreamReader reader = new StreamReader(@"Preferences\MySQLConnectionData.txt");
+            var exeFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            var dir = Path.GetDirectoryName(exeFilePath);
+            var txtPath = Path.Combine(dir, "Preferences", "MySqlConnectionData.txt");
+            StreamReader reader = new StreamReader(txtPath);
             Dictionary<string, string> map = new Dictionary<string, string>();
             while (!reader.EndOfStream)
             {
@@ -66,11 +70,18 @@ namespace WpfApp1
                 using (var connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
+                    string sqlQuery = $"SELECT * FROM {vm.Table}";
+                    var command = new MySqlCommand(sqlQuery, connection);
+                    var adapter = new MySqlDataAdapter(command);
+                    var dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGrid.ItemsSource = dataTable.DefaultView;
                     vm.Message = "Sikeres csatlakozás!";
                 }
-            } catch (Exception ex)
+            } 
+            catch (Exception ex)
             {
-                StreamWriter writer = new StreamWriter("Errrorlog.txt", append: true);
+                StreamWriter writer = new StreamWriter("Errorlog.txt", append: true);
                 writer.WriteLine(ex);
                 writer.Close();
                 vm.Message = "Sikertelen csatlakozás.";

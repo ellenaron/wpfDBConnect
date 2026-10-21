@@ -88,6 +88,19 @@ namespace WpfApp1.viewModel
                 }
             }
         }
+        private string _table;
+        public string Table
+        {
+            get { return _table; }
+            set
+            {
+                if (_table != value)
+                {
+                    _table = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

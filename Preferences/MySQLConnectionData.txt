@@ -1,5 +1,5 @@
 Host:localhost
 user:root
-Database:test
+Database:teliolimpia
 Password:
 Port:3307
